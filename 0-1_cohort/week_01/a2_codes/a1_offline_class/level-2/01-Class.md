@@ -1,12 +1,1 @@
-
-class Animal {
-  constructor(name, legCount) {
-    this.name = name
-    this.legCount = legCount
-  }
-  describe() {
-    return `${this.name} has ${this.legCount} legs`
-  }
-}
-
-
+![alt text](image-1.png)

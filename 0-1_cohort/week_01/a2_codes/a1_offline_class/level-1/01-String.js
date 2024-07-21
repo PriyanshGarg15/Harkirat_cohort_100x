@@ -26,7 +26,7 @@ function findLastIndexOf(str, target) {
 }
 findLastIndexOf("Hello World World", "World");
 
-// slice
+// slice(remember=does not include last index provided)
 function getSlice(str, start, end) {
   console.log("Original String:", str);
   console.log("After slice:", str.slice(start, end));
@@ -54,7 +54,7 @@ function splitString(str, separator) {
 }
 splitString("Hello World", " ");
 
-// trim
+// trim   //trim down extra spaces from start and of string only
 function trimString(str) {
   console.log("Original String:", str);
   console.log("After trim:", str.trim());

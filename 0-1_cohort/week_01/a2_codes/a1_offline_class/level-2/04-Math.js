@@ -16,6 +16,7 @@ function mathMethods(value) {
   let maxValue = Math.max(5, 10, 15);
   console.log("After max():", maxValue);
 
+
   let minValue = Math.min(5, 10, 15);
   console.log("After min():", minValue);
 
