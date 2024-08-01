@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Animal Data</title>
+</head>
+<body>
+    <script>
+        // Async/Await function
+        async function getAnimalDataAsync() {
+            const response = await fetch("https://freetestapi.com/api/v1/animals");
+            const finalData = await response.json();
+            console.log(finalData);
+        }
+    </script>
+    <button onclick="getAnimalData()">Get Animal Data (Promise)</button>
+    <button onclick="getAnimalDataAsync()">Get Animal Data (Async/Await)</button>
+</body>
+</html>

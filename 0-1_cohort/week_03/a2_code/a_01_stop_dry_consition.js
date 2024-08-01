@@ -34,7 +34,7 @@ app.get("/health-checkup", function (req, res) {
 
 app.put("/replace-kidney", function (req, res) {
     const username = req.headers.username;
-    const password = req.headers.password;
+    const password = req.headers.password; 
     const kidneyId = parseInt(req.query.kidneyId);
 
     if (!usernameValidator(username, password)) {
