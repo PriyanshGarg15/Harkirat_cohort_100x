@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const app = express();
 app.use(express.json()); // Middleware to parse JSON bodies
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://priyanshgarg:NfayfduqyfrG0zml@cluster0.ccptlxb.mongodb.net/harki")
+mongoose.connect("xyz")
 // Define a Mongoose model for users
 const User = mongoose.model("Users", {
   name: String,
