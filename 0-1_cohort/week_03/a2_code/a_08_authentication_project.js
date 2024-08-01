@@ -61,7 +61,7 @@ app.post("/signin", function (req, res) {
 
 // Route to get a list of users, excluding the one who is logged in
 app.get("/users", function (req, res) {
-  // Get the JWT token from request headers
+  // Get the JWT token from request headers 
   const token = req.headers.authorization;
 
   try {
