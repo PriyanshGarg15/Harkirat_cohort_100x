@@ -2,11 +2,12 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-
 const app = express();
 app.use(express.json()); // Middleware to parse JSON bodies
+
+
 // Connect to MongoDB
-mongoose.connect("xyz")
+mongoose.connect("mongodb+srv://priyanshgarg:NfayfduqyfrG0zml@cluster0.ccptlxb.mongodb.net/harki")
 // Define a Mongoose model for users
 const User = mongoose.model("Users", {
   name: String,
@@ -14,12 +15,18 @@ const User = mongoose.model("Users", {
   password: String,
 });
 
+
+
+
 // Secret key for JWT signing
 const jwtPassword = "123456";
+
+
+
+
 // Route for user signup
 app.post("/signup", async function (req, res) {
-  const { username, email, password } = req.body; // Destructure username, email, and password from the request body
-
+  const { username, email, password } = req.body; 
   try {
     // Correct the check to find a user with the same email
     const existingUser = await User.findOne({ email: email });
