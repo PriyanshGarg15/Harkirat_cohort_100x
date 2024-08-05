@@ -1,7 +1,5 @@
 const request = require('supertest');
-const assert = require('assert');
 const express = require('express');
-
 const app = express();
 let errorCount = 0;
 
@@ -24,7 +22,11 @@ app.get('/errorCount', function(req, res) {
 });
 
 
+
+// error count middleware is always written after all endpoints work is done!
 /////////////
+
+
 app.use((err, req, res, next) => {
   errorCount++;
   res.status(404).end();
@@ -34,4 +36,6 @@ app.use((err, req, res, next) => {
 ////////////
 
 
-module.exports = app;
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
