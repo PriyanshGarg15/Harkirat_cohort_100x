@@ -80,7 +80,7 @@ app.get("/users", function (req, res) {
     return res.json(otherUsers);
   } catch (err) {
     // If token verification fails, return a 403 Forbidden status
-    return res.status(403).json({
+    return res.status(403).json({ 
       msg: "Invalid token",
     });
   }
