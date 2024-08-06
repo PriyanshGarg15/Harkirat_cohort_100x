@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>window.onload Example</title>
+    <title>Accessing Children Example</title>
 </head>
 <body>
-    <h1>Original Content</h1>
-    <p>This content will be updated when the page is fully loaded.</p>
+    <h2>Favorite Beverages</h2>
+    <ul id="beverageList">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <button id="changeSecondItem">Change Second Item to Juice</button>
 
     <script>
-        window.onload = function() {
-            document.body.innerHTML += '<p>The page is fully loaded.</p>';
-        };
+        // Get the unordered list element
+        const list = document.getElementById("beverageList");
+
+        // Access all child <li> elements
+        const items = list.children;
+
+        // Log the text content of each child element
+        for (let i = 0; i < items.length; i++) {
+            console.log("Item " + (i + 1) + ": " + items[i].textContent);
+        }
+
+        // Change the text of the second item using the 'children' property
+        const changeSecondItemButton = document.getElementById("changeSecondItem");
+        changeSecondItemButton.addEventListener("click", function() {
+            // Access the second child (index 1, since children is zero-indexed)
+            if (items.length > 1) { // Check if there is a second item
+                items[1].textContent = "Juice";
+            }
+        });
     </script>
 </body>
 </html>
